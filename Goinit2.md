@@ -22,17 +22,51 @@ import "fmt"
 
 func main() {
 	var greeting string
-	greeting = "①Hello World"
+	greeting = "Hello World"
 	fmt.Println(greeting)
-	greeting = "②Hello go"
+	greeting = "Hello go"
 	fmt.Println(greeting)
 }
 ```
 実行結果
 ```
-①Hello World
-②Hello go
+Hello World
+Hello go
 ```
-上から読まれてますね。
+上から読まれてますね。<br>
+代入する値が整数ならintの型を付ける。
+```
+var number int
+number = 100
+```
 
+## 型推論
+var 変数名 型を書かずとも **:**  で型を推測してくれる
+```
+package main
 
+import "fmt"
+
+func main() {
+	greeting := "Hello World"
+	fmt.Println(greeting)
+	greeting = "Hello go"
+	fmt.Println(greeting)
+  number := 100
+	fmt.Println(number)
+}
+```
+ちなみに同じ変数に別の値を再代入する時は:不要のようです。
+
+## 変数名の付け方
+- 1文字目:  アルファベット、アンダーバー
+- 2文字目以降: アルファベット、アンダーバー、`数字`
+- 日本語は使わない！
+- ハイフンで繋がない
+- 1文字目が`小文字`: `そのパッケージだけで`使える変数
+- 1文字目が`大文字`: `他のパッケージからも`みえる変数
+
+## 実例
+- greeting
+- number1
+- playerName(キャメルケース)
